@@ -1,0 +1,17 @@
+/**************************
+    CSS Reset
+***************************/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/**************************
+    Variables
+***************************/
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(34, 97%, 64%);
+}/*# sourceMappingURL=styles.css.map */
