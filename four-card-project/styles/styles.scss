@@ -23,8 +23,170 @@ $very-dark-blue: hsl(234, 12%, 34%);
 $grayish-blue: hsl(229, 6%, 66%);
 $very-light-gray: hsl(0, 0%, 98%);
 
-h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: $orange;
+//Font Weights
+$font-weights: (
+  "light": 200,
+  "regular": 400,
+  "semi-bold": 600,
+);
+
+//Font Sizes
+$font-sizes: (
+  "extra-small": 0.8rem,
+  "small": 1rem,
+  "medium": 1.1rem,
+  "regular": 1.4rem,
+  "large": 1.7rem,
+);
+
+//Line Heights
+$line-height: 1.5rem;
+
+//Margins
+$margin: (
+  "small": 1rem,
+  "medium": 1.1rem,
+  "large": 4rem,
+);
+
+//Paddings
+$padding: (
+  "small": 0.9rem,
+  "medium": 2rem,
+  "large": 4rem,
+);
+
+/**************************
+    Global Styles
+***************************/
+
+body {
+  font-family: "Popins", sans-serif;
+  font-weight: map-get($font-weights, "regular");
+}
+
+/*****************************************
+    Four Card Project Styles Mobile First
+******************************************/
+
+// Content Container/Wrapper Styles
+
+.project-container {
+  height: max-content;
+  padding-block: map-get($padding, "large");
+  padding-inline: map-get($padding, "medium");
+}
+
+.cards-layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  //Switch to multi column layout
+  @media screen and (min-width: 1024px) {
+    border: 2px solid red;
+  }
+}
+
+.card-container {
+  height: max-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 10px;
+  padding: map-get($padding, "medium");
+  -webkit-box-shadow: -1px 3px 21px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 3px 21px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 3px 21px -8px rgba(0, 0, 0, 0.75);
+
+  @media screen and (min-width: 425px) {
+    width: 85%;
+    margin-inline: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 60%;
+  }
+}
+
+.img-wrapper {
+  text-align: right;
+}
+
+.footer-container {
+  margin-block-start: map-get($margin, "large");
+  text-align: center;
+  font-size: map-get($font-sizes, "extra-small");
+}
+
+//Card Individual Styles
+
+.card-supervisor {
+  border-top: 5px solid $cyan;
+}
+.card-team {
+  border-top: 5px solid $red;
+}
+.card-karma {
+  border-top: 5px solid $orange;
+}
+.card-calculator {
+  border-top: 5px solid $blue;
+}
+
+// Typography/Font Styles
+
+.main-title {
+  font-weight: map-get($font-weights, "light");
+  font-size: map-get($font-sizes, "large");
+  color: $very-dark-blue;
+  margin-block-end: map-get($margin, "small");
+
+  @media screen and (max-width: 374px) {
+    font-size: map-get($font-sizes, "regular");
+  }
+
+  @media screen and (min-width: 425px) {
+    text-align: center;
+  }
+}
+
+.main-title-bold {
+  display: block;
+  font-size: map-get($font-sizes, "large");
+  color: $very-dark-blue;
+  margin-block-start: 0.5rem;
+
+  @media screen and (max-width: 374px) {
+    font-size: map-get($font-sizes, "regular");
+  }
+}
+
+.main-title-text {
+  color: $grayish-blue;
+  line-height: $line-height;
+  margin-block-end: map-get($margin, "large");
+  font-size: map-get($font-sizes, "medium");
+  text-align: center;
+
+  @media screen and (min-width: 425px) {
+    width: 67%;
+    margin-inline: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 70%;
+  }
+}
+
+.card-title {
+  color: $very-dark-blue;
+  font-size: map-get($font-sizes, "regular");
+}
+
+.card-text {
+  color: $grayish-blue;
+  font-size: map-get($font-sizes, "small");
+  line-height: $line-height;
 }
